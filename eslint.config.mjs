@@ -22,8 +22,6 @@ const eslintConfig = defineConfig([
     },
     extends: ["js/recommended"],
     rules: {
-      "no-unused-vars": "warn",
-      "no-undef": "warn",
       "jest/no-disabled-tests": "warn",
       "jest/no-focused-tests": "error",
       "jest/no-identical-title": "error",
