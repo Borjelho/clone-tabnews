@@ -1,1 +1,9 @@
+#!/bin/sh
 npx commitlint --edit $1
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+docker run --rm -t \
+  -v "$REPO_ROOT":/repo \
+  -w /repo \
+  zricethezav/gitleaks:latest \
+  detect --source . --no-git --redact --verbose
