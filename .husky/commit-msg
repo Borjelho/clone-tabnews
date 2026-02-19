@@ -1,9 +1,9 @@
 #!/bin/sh
 npx commitlint --edit $1
-REPO_ROOT="$(git rev-parse --show-toplevel)"
+
 git diff --staged --no-color \
 | docker run --rm -i \
-  -v "$REPO_ROOT":/repo \
+  -v ".":/repo \
   -w /repo \
   zricethezav/gitleaks:latest \
   stdin 
